@@ -6,8 +6,8 @@ const allData = [
     brand: 'Nike',
     cardNumber: 555555,
     id: 1,
-    class: 'First',
-    title: 'Title'
+    variation: 'First',
+    teamName: 'Rmd'
   },
   {
     sport: 'Football',
@@ -16,8 +16,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 2,
-    class: 'First 1',
-    title: 'Title 2'
+    variation: 'First 1',
+    teamName: 'Fcb'
   },
   {
     sport: 'Football',
@@ -26,8 +26,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 3,
-    class: 'First 2',
-    title: 'Title 3'
+    variation: 'First 2',
+    teamName: 'Fcb2'
   },
   {
     sport: 'Cricket',
@@ -36,8 +36,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 4,
-    class: 'First 5',
-    title: 'Title 4'
+    variation: 'First 5',
+    teamName: 'Fcb3'
   },
   {
     sport: 'Cricket',
@@ -46,8 +46,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 5,
-    class: 'Last',
-    title: 'Title 5'
+    variation: 'Last',
+    teamName: 'Fcb4'
   },
   {
     sport: 'Cricket',
@@ -56,8 +56,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 6,
-    class: 'Last 2',
-    title: 'Title 6'
+    variation: 'Last 2',
+    teamName: 'Fcb5'
   },
   {
     sport: 'Cricket',
@@ -66,8 +66,8 @@ const allData = [
     brand: 'Puma',
     cardNumber: 66666,
     id: 6,
-    class: 'Last 2',
-    title: 'Title 6'
+    variation: 'Last 2',
+    teamName: 'Fcb6'
   },
 ];
 
@@ -102,6 +102,7 @@ const cardNumberFilteredData = document.getElementById('cardNumberFilteredData')
 window.addEventListener('click', function (e) {
   if (document.getElementById('cardNumberFilteredData').contains(e.target)) {
     // Clicked in box
+    cardNumberFilteredData.style.display = 'none';
   } else {
     // Clicked outside the box
     cardNumberFilteredData.style.display = 'none';
@@ -112,10 +113,10 @@ window.addEventListener('click', function (e) {
 let uiData = [];
 
 const setIntoDefaultValue = (data) => {
-  const classInput = document.getElementById('class');
-  const title = document.getElementById('title');
-  classInput.value = data.class;
-  title.value = data.title;
+  const variation = document.getElementById('variation');
+  const team = document.getElementById('team');
+  variation.value = data.variation;
+  team.value = data.teamName;
 }
 
 
@@ -146,10 +147,10 @@ cardNumber.addEventListener('input', (e) => {
    <div class="filteredItem">
     <img src="${data.img}" alt="" class='filteredImg' /> 
     <img src="${data.img}" alt="" class='filteredImg' /> 
-    <p>${data?.sport} </p> <p>${data?.year}</p> 
-   <p>${data?.brand} </p>
-    </div>
     <div>
+    <p>${data?.sport} </p> <p>${data?.year}</p> 
+    <p>${data?.brand} </p>
+    </div>
     </div>
   `
     div.addEventListener('click', () => {
